@@ -1,0 +1,5 @@
+﻿aiohttp==3.11.16
+Flask==3.1.0
+nextcord==2.6.0
+DateTime==5.5
+DiscordUtils
