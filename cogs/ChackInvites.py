@@ -25,7 +25,7 @@ class WelcomeCog(commands.Cog):
 
         embedjoin = nextcord.Embed(
             title="ยินดีต้อนรับนะคะ~",
-            description=f"## คุณ **{member.mention}** เข้าร่วมเซิฟเวอร์\n## ยืนยันตัวตนได้ที่ <#1350768591271886869>\n\n### ได้รับคำเชิญจาก : **{inver.mention}**",
+            description=f"## คุณ **{member.mention}** เข้าร่วมเซิฟเวอร์\n## ยืนยันตัวตนได้ที่ <#1350768591271886869> นะ~",
             colour=0x00FF99
         )
         embedjoin.set_image(url="https://i.pinimg.com/originals/d6/6a/d1/d66ad1a0ce0fc09370424075125b06b7.gif")
