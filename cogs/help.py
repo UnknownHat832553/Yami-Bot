@@ -18,8 +18,6 @@ class HelpCommand(commands.Cog):
         embed.add_field(name="!rule [1-8] & !warning", value="บอกกฏ และ บอกว่าทำผิดได้อะไร", inline=False)
         embed.add_field(name="!sendm", value="แสดงหน้าต่างส่งข้อความลับ", inline=False)
         embed.add_field(name="!timeout <@สมาชิก> <ระยะเวลา(วินาที)> [เหตุผล]", value="คนที่โดน Timeout จะถูกทำให้เงียบ", inline=False)
-        embed.add_field(name="/allow_link", value="เพิ่มคนที่สามารถส่งลิงก์ได้", inline=False)
-        embed.add_field(name="/disallow_link", value="นำสิทธิ์ส่งลิงก์ออก", inline=False)
         embed.add_field(name="!random", value="สุ่มรูปภาพ", inline=False)
         embed.add_field(name="!rolegame", value="ระบบรับยศเกม", inline=False)
         embed.add_field(name="!setstatus", value="ตั้งค่าช่องดูสถานะเซิร์ฟเวอร์", inline=False)
