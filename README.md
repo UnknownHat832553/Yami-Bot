@@ -3,7 +3,6 @@ Discord: discord.gg/x3XkCBswvY
 
 - **main.py** (โค้ดหลัก)
 - **cogs** (Folder)
-- **Link.py** (Anti Link)
 - **ChackInvites.py** (แจ้งเตือนตอนมีคนเข้าดิส)
 - **ClearM.py** (ลบข้อความ)
 - **Rule.py** (Rule Server)
@@ -13,4 +12,4 @@ Discord: discord.gg/x3XkCBswvY
 - **roleGame.py** (รับยศเกม)
 - **ServerStatus.py** (ดู Status เซิร์ฟเวอร์)
 - **Random.py** (Random รูป)
-
+- **Links.py** (ย่อลิ้ง / สร้าง QR)
