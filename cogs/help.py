@@ -21,6 +21,7 @@ class HelpCommand(commands.Cog):
         embed.add_field(name="!random", value="สุ่มรูปภาพ", inline=False)
         embed.add_field(name="!rolegame", value="ระบบรับยศเกม", inline=False)
         embed.add_field(name="!setstatus", value="ตั้งค่าช่องดูสถานะเซิร์ฟเวอร์", inline=False)
+        embed.add_field(name="!links", value="ย่อลิ้ง / สร้าง QR", inline=False)
         
         embed.set_footer(text=f"Requested by {ctx.author.display_name}", icon_url=ctx.author.avatar.url if ctx.author.avatar else None)
         await ctx.send(embed=embed)
