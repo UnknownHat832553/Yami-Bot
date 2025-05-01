@@ -13,7 +13,7 @@ class HelpCommand(commands.Cog):
             color=nextcord.Color.blue()
         )
 
-        embed.add_field(name="!help", value="แสดงหน้านี้แหละ~", inline=False)
+        embed.add_field(name="!cmd", value="แสดงหน้านี้แหละ~", inline=False)
         embed.add_field(name="!clear [จำนวน]", value="ลบข้อความในช่องแชท", inline=False)
         embed.add_field(name="!rule [1-8] & !warning", value="บอกกฏ และ บอกว่าทำผิดได้อะไร", inline=False)
         embed.add_field(name="!sendm", value="แสดงหน้าต่างส่งข้อความลับ", inline=False)
