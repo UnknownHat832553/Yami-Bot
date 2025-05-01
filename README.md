@@ -10,6 +10,5 @@ Discord: discord.gg/x3XkCBswvY
 - **Timeout.py** (ตั้ง Timeout ให้คนอื่น)
 - **help.py** (ส่งทุกคำสั่ง)
 - **roleGame.py** (รับยศเกม)
-- **ServerStatus.py** (ดู Status เซิร์ฟเวอร์)
 - **Random.py** (Random รูป)
 - **Links.py** (ย่อลิ้ง / สร้าง QR)
