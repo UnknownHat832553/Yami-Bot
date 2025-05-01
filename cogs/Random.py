@@ -54,7 +54,8 @@ class GenView(nextcord.ui.View):
 class ImageButtons(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        bot.add_view(GenView())
+    async def cog_load(self):
+        self.bot.add_view(GenView())
 
     @commands.command(name="random")
     async def random(self, ctx):
