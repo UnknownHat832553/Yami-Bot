@@ -5,8 +5,8 @@ class HelpCommand(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="help")
-    async def help(self, ctx):
+    @commands.command(name="cmd")
+    async def cmd(self, ctx):
         embed = nextcord.Embed(
             title="🛠 คำสั่งที่มีอยู่ในบอท",
             description="คำสั่งทั้งหมดที่สามารถใช้ได้ในตอนนี้:",
