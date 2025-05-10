@@ -2,25 +2,22 @@ import nextcord
 from nextcord.ext import commands
 from nextcord.ui import View, Button
 
-gameZone = 1362643842947354724
-Mine = 1362644006726668448
-FF = 1362644072497418360
-Valo = 1362644225992298507
-Roblox = 1362647100541763604
-ROV = 1362647291315622059
-PUBG = 1362647422496538785
+# 🌟 รวมข้อมูล role ทั้งหมดไว้ใน dictionary
+ROLE_DATA = {
+    "GameZone": (1362643842947354724, "gamezone", 1352645240917594163),
+    "Minecraft": (1362644006726668448, "mine", 1352229175964078180),
+    "FreeFire": (1362644072497418360, "ff", 1352228437913374735),
+    "Valorant": (1362644225992298507, "valo", 1352308615444434944),
+    "Roblox": (1362647100541763604, "roblox", 1352227651825303582),
+    "ROV": (1362647291315622059, "rov", 1352228946070212610),
+    "PUBG": (1362647422496538785, "pubg", 1352308413622653058),
+}
 
 class RoleView(View):
     def __init__(self):
         super().__init__(timeout=None)
-        self.add_item(self.create_role_button("GameZone", nextcord.PartialEmoji(name="gamezone", id=1352645240917594163), 1362643842947354724))
-        self.add_item(self.create_role_button("Minecraft", nextcord.PartialEmoji(name="mine", id=1352229175964078180), 1362644006726668448))
-        self.add_item(self.create_role_button("FreeFire", nextcord.PartialEmoji(name="ff", id=1352228437913374735), 1362644072497418360))
-        self.add_item(self.create_role_button("Valorant", nextcord.PartialEmoji(name="valo", id=1352308615444434944), 1362644225992298507))
-        self.add_item(self.create_role_button("Roblox", nextcord.PartialEmoji(name="roblox", id=1352227651825303582), 1362647100541763604))
-        self.add_item(self.create_role_button("ROV", nextcord.PartialEmoji(name="rov", id=1352228946070212610), 1362647291315622059))
-        self.add_item(self.create_role_button("PUBG", nextcord.PartialEmoji(name="pubg", id=1352308413622653058), 1362647422496538785))
-
+        for label, (role_id, emoji_name, emoji_id) in ROLE_DATA.items():
+            self.add_item(self.create_role_button(label, nextcord.PartialEmoji(name=emoji_name, id=emoji_id), role_id))
 
     def create_role_button(self, label, emoji, role_id):
         async def callback(interaction: nextcord.Interaction):
@@ -40,19 +37,9 @@ class RoleView(View):
 
     @nextcord.ui.button(label="เช็คยศ", style=nextcord.ButtonStyle.gray, emoji="⚙")
     async def check_role(self, button: Button, interaction: nextcord.Interaction):
-        role_map = {
-            1362643842947354724,
-            1362644006726668448,
-            1362644072497418360,
-            1362644225992298507,
-            1362647100541763604,
-            1362647291315622059,
-            1362647422496538785
-        }
         roles = [
-            f"{interaction.guild.get_role(role_id).name}"
-            for role_id in role_map.items()
-            if nextcord.utils.get(interaction.user.roles, id=role_id)
+            role.name for role_id in ROLE_DATA.values()
+            if (role := interaction.guild.get_role(role_id[0])) and role in interaction.user.roles
         ]
         role_list = ", ".join(roles) if roles else "ไม่มีบทบาทในนี้"
         await interaction.response.send_message(f"🎮 ยศในนี้ของคุณ: `{role_list}`", ephemeral=True)
