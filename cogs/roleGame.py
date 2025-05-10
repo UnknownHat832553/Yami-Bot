@@ -41,17 +41,17 @@ class RoleView(View):
     @nextcord.ui.button(label="เช็คยศ", style=nextcord.ButtonStyle.gray, emoji="⚙")
     async def check_role(self, button: Button, interaction: nextcord.Interaction):
         role_map = {
-            1362643842947354724: "<:1352645240917594163:>",
-            1362644006726668448: "<:1352229175964078180:>",
-            1362644072497418360: "<:1352228437913374735:>",
-            1362644225992298507: "<:1352308615444434944:>",
-            1362647100541763604: "<:1352227651825303582:>",
-            1362647291315622059: "<:1352228946070212610:>",
-            1362647422496538785: "<:1352308413622653058:>"
+            1362643842947354724,
+            1362644006726668448,
+            1362644072497418360,
+            1362644225992298507",
+            1362647100541763604,
+            1362647291315622059",
+            1362647422496538785
         }
         roles = [
-            f"{emoji} {interaction.guild.get_role(role_id).name}"
-            for role_id, emoji in role_map.items()
+            f"{interaction.guild.get_role(role_id).name}"
+            for role_id in role_map.items()
             if nextcord.utils.get(interaction.user.roles, id=role_id)
         ]
         role_list = ", ".join(roles) if roles else "ไม่มีบทบาทในนี้"
